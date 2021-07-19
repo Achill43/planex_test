@@ -1,0 +1,58 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% load i18n %}
+
+{% block table %}
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <th>{% trans "Full name" %}</th>
+                <th class="danger">{% trans "Job" %}</th>
+                <th class="danger">{% trans "E-mail" %}</th>
+                <th class="danger">{% trans "Domain name" %}</th>
+                <th class="danger">{% trans "Phone" %}</th>
+                <th class="danger">{% trans "Text" %}</th>
+                <th class="danger">{% trans "Company name" %}</th>
+                <th class="danger">{% trans "Integer" %}</th>
+                <th class="danger">{% trans "Address" %}</th>
+                <th class="danger">{% trans "Date" %}</th>
+                <th>{% trans "Chech for export" %}</th>
+            </thead>
+            <tbody>
+                {% for schema in schemas %}
+                    <tr>
+                            <td>{{schema.full_name}}</td>
+                            <td>{{schema.job}}</td>
+                            <td>{{schema.email}}</td>
+                            <td>{{schema.domain_name}}</td>
+                            <td>{{schema.phone}}</td>
+                            <td>{{schema.text}}</td>
+                            <td>{{schema.company_name}}</td>
+                            <td>{{schema.integer}}</td>
+                            <td>{{schema.address}}</td>
+                            <td>{{schema.date}}</td>
+                            <td>
+                                <input type="checkbox" 
+                                        name="export_schema"
+                                        value="{{schema.id}}"/>
+                            </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock table %}
+
+{% block btn_block %}
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{% url "create_schema" %}" class="btn btn-primary">
+                {% trans "New schema" %}
+            </a>
+        </div>
+        <div class="col-md-2 offset-md-6">
+            <a href="{% url "create_export_to_csv" %}" class="btn btn-primary js-export-to-csv">
+                {% trans "Export to CSV" %}
+            </a>
+        </div>
+    </div>
+{% endblock btn_block %}

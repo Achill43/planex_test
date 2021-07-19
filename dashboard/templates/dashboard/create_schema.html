@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{% trans "Create new  Shema" %}</h1>
+        </div>
+
+        <div class="col-md-12">
+            <form method="post" action="{{request.path}}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

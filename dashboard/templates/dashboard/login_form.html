@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>{% trans "Login form" %}</h1>
+    </div>
+    <div class="col-md-8 offset-md-4">
+        <form method="post" action="{{request.path}}" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">{% trans "Username" %}</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <small class="text-danger">{{form.username.errors.as_text}}</small>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">{% trans "Password" %}</label>
+                    {{ form.password }}
+                    {% if form.password.errors %}
+                        <small class="text-danger">{{field.errors.as_text}}</small>
+                    {% endif %}
+                </div>
+            
+            <button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
+        </form>
+    </div>
+</div>
+<div class="col-md-12"></div>
+{% endblock content %}

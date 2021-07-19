@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>{% trans "Dashboard" %}</h1>
+    </div>
+    <div class="col-md-12">
+        <a href="{% url 'dashboard' %}">{% trans "Schema" %}</a>
+        <a href="{% url 'export_csv_list' %}">{% trans "Export CSV" %}</a>
+    </div>
+    <div class="col-md-12">
+        {% block table %}{% endblock table %}
+    </div>
+    {% block btn_block %}{% endblock btn_block %}
+</div>
+{% endblock content %}

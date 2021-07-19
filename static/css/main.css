@@ -1,0 +1,11 @@
+.container-wide {
+    max-width: 1300px;
+    margin: 0px auto;
+    
+}
+.hidden-input {
+    position: absolute;
+    top: -100%;
+    overflow: hidden;
+    transform: scale(0);
+}
