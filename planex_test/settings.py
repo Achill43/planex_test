@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+from planex_test.settings_templates import REDIS_HOST
 import dj_database_url
 from pathlib import Path
 
@@ -139,6 +140,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redis config
+REDIS_URL = 'redis://:p8b4cfe5e06377ca95a069555cfb166daaa11d1c037033a0f0fde1fcb8f8301c9@ec2-44-194-38-94.compute-1.amazonaws.com:10540'
 BROKER_URL = 'redis://:p8b4cfe5e06377ca95a069555cfb166daaa11d1c037033a0f0fde1fcb8f8301c9@ec2-44-194-38-94.compute-1.amazonaws.com:10540'
 BROKER_POOL_LIMIT = None
 
