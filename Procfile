@@ -1,1 +1,1 @@
-web: gunicorn название_проекта.wsgi --log-file -
+web: gunicorn planex_test.wsgi --log-file -
