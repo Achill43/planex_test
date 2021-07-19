@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get(
 DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "vast-woodland-70932.herokuapp.com"]
 
 
 # Application definition
