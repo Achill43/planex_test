@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY', 'django-insecure-d$0xjb*sp(k0ci#u_(vsn7djy&hh$(f7ck@kvuf1v5j27t_^-1' )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = ["127.0.0.1", "vast-woodland-70932.herokuapp.com"]
@@ -139,10 +139,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redis config
-# REDIS_HOST = 'localhost'
-# REDIS_PORT = '6379'
 BROKER_URL = 'redis://:p8b4cfe5e06377ca95a069555cfb166daaa11d1c037033a0f0fde1fcb8f8301c9@ec2-44-194-38-94.compute-1.amazonaws.com:10540'
-# BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600} 
+BROKER_POOL_LIMIT = None
 CELERY_RESULT_BACKEND = 'redis://:p8b4cfe5e06377ca95a069555cfb166daaa11d1c037033a0f0fde1fcb8f8301c9@ec2-44-194-38-94.compute-1.amazonaws.com:10540'
 
 # Media config
