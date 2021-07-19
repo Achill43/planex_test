@@ -141,9 +141,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Redis config
 # REDIS_HOST = 'localhost'
 # REDIS_PORT = '6379'
-CELERY_BROKER_URL = 'redis://:p8b4cfe5e06377ca95a069555cfb166daaa11d1c037033a0f0fde1fcb8f8301c9@ec2-44-194-38-94.compute-1.amazonaws.com:10540'
+BROKER_URL = 'redis://:p8b4cfe5e06377ca95a069555cfb166daaa11d1c037033a0f0fde1fcb8f8301c9@ec2-44-194-38-94.compute-1.amazonaws.com:10540'
 # BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600} 
-# CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+CELERY_RESULT_BACKEND = 'redis://:p8b4cfe5e06377ca95a069555cfb166daaa11d1c037033a0f0fde1fcb8f8301c9@ec2-44-194-38-94.compute-1.amazonaws.com:10540'
 
 # Media config
 
