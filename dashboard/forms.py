@@ -102,8 +102,6 @@ class ExportToCSVForm(forms.Form):
             export_to_csv_obj.save()
 
         schema_ids = list(data["schemas_objects"].values_list('id', flat=True))
-        print("Choose ids:")
-        print(schema_ids)
         schema_export_to_csv.delay(
             export_to_csv_obj.id, field_list, schema_ids)
         return export_to_csv_obj
